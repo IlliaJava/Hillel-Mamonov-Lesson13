@@ -30,6 +30,8 @@ public class Main {
         autoPark.add(sportCar);
 
         System.out.println(autoPark);
+        System.out.println("Дата рождения водителя " + lorry.getCarClass() + ": " + lorry.getYearOfBirth());
+        System.out.println("Дата рождения водителя " + sportCar.getCarClass() + ": " + sportCar.getYearOfBirth());
         System.out.println();
 
         lorry.start();

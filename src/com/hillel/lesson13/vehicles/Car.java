@@ -29,6 +29,10 @@ public abstract class Car {
         return marka;
     }
 
+    public String getYearOfBirth() {
+        return driver.getYearOfBirth();
+    }
+
     public void start() {
         System.out.println(getCarClass() + " " + getMarka() + " Поехали");
     }

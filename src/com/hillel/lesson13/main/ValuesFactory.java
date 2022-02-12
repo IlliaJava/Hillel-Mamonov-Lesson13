@@ -11,6 +11,7 @@ public class ValuesFactory {
     private static final Random RANDOM = new Random();
     private static final int[] WEIGHTS = {1000, 1500, 2000, 2500};
     private static final int[] CARRYING = {1000, 2000, 3000, 5000, 10000, 20000, 24000};
+    private static final String[] YEAROFBIRTH = {"18.12.1985", "10.11.1988", "6.1.1990", "7.11.1992", "18.12.1994", "18.12.1965"};
 
     private enum markaList {
         Audi, Mercedes, Honda, BMW, Ford, Mitsubishi, Toyota
@@ -37,8 +38,8 @@ public class ValuesFactory {
         return RANDOM.nextInt(11) + 1;
     }
 
-    public static int age() {
-        return RANDOM.nextInt(49) + 18;
+    public static String yearOfBirth() {
+        return YEAROFBIRTH[RANDOM.nextInt(YEAROFBIRTH.length)];
     }
 
     public static String fullName() {
@@ -66,7 +67,7 @@ public class ValuesFactory {
     public static Lorry generateNewLorry() {
         String marka = marka();
         int weight = weight();
-        Driver driver = new Driver(age(), fullName(), experience());
+        Driver driver = new Driver(yearOfBirth(), fullName(), experience());
         Engine engine = new Engine(power(), company());
         int carrying = carrying();
         return new Lorry(marka, weight, driver, engine, carrying);
@@ -75,7 +76,7 @@ public class ValuesFactory {
     public static SportCar generateNewSportCar() {
         String marka = marka();
         int weight = weight();
-        Driver driver = new Driver(age(), fullName(), experience());
+        Driver driver = new Driver(yearOfBirth(), fullName(), experience());
         Engine engine = new Engine(power(), company());
         double speed = speed();
         return new SportCar(marka, weight, driver, engine, speed);
